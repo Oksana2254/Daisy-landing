@@ -1,0 +1,32 @@
+@mixin small-text($color, $fontSize, $fontFamily, $letter-spacing){
+  color: $color;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+  letter-spacing: $letter-spacing;
+}
+@mixin big-text($color, $fontSize, $fontFamily){
+  color: $color;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+}
+@mixin text($max-width, $margin: 0 auto){
+  max-width: $max-width;
+  margin: $margin;
+}
+@mixin btn-transparent{
+  width: 204px;
+  height: 57px;
+  background: transparent;
+  border: 2px solid $red;
+  border-radius: 7px;
+  color: $red;
+  font: 24px 'SourseSanPro_light';
+}
+@mixin btn-red{
+  width: 165px;
+  height: 45px;
+  background: $red;
+  color: $white;
+  font: 20px 'SourseSanPro_light';
+  border-radius: 7px;
+}

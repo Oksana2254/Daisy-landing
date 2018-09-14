@@ -1,0 +1,483 @@
+//DEFAULT CLASSES START
+body{
+  font: 15px/1.3 'SourseSanPro_light';
+  color: $lightGrey;
+  letter-spacing: -0.1px;
+}
+h1 {
+  font: 51px 'SourseSanPro_bold';
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: 11px;
+}
+h2{
+  @extend h1;
+  margin-bottom: 0;
+}
+h3{
+  font: 28px 'SourseSanPro_medium';
+  letter-spacing: 1.5px;
+  color: $grey;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 1px solid $lightGrey;
+  margin-bottom: 20px;
+}
+h4{
+  @extend h3;
+  border: none;
+  margin-bottom: 17px;
+}
+h5{
+  @extend h3;
+  color: $moreDarkGrey;
+  text-transform: none;
+  display: block;
+  letter-spacing: -0.1px;
+  border: none;
+  margin-bottom: 9px;
+}
+h6{
+  font: 20px 'SourseSanPro_medium';
+  color: $grey;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 1px solid $lightGrey;
+  margin-bottom: 22px;
+}
+.container{
+  max-width: 1000px;
+  padding: 0 30px;
+  margin: 0 auto;
+  @extend .clearfix;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.red-text{
+  color: $red;
+  text-transform: uppercase;
+}
+.title-new {
+  .red-text {
+    text-transform: none;
+  }
+  .job {
+    @include big-text($moreDarkGrey, $regularFontSize, $fontLight)
+  }
+}
+.text-advertising{
+  margin-top: 26px;
+  max-width: 380px;
+  p{
+    color: $moreLightGrey;
+    line-height: 1.6;
+  }
+  label {
+    background: $red;
+    width: 12px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+  }
+}
+.btn-center{
+  margin-top: 37px;
+  button{
+    @include btn-transparent;
+  }
+}
+.btn-red{
+  margin-top: 24px;
+  button{
+    @include btn-red;
+  }
+}
+.bg {
+  background: url("../img/bg-header.png") no-repeat center/cover;
+}
+.bg-city{
+  background: url("../img/bg-city.png") no-repeat center/cover;
+}
+.bg-light{
+  background: $light;
+}
+.bg-footer{
+  background: url("../img/footer-logo.png") no-repeat center/cover;
+}
+.hexagon{
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 13px;
+}
+.small-circle-one{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid $red;
+  display: inline-block;
+  i{
+    color: $red;
+    line-height: 30px;
+  }
+}
+.circle-social{
+  @extend .small-circle-one;
+  width: 40px;
+  height: 40px;
+  background-color: $moreDarkGrey;
+  border: none;
+  i{
+    color: $white;
+    line-height: 40px;
+    font-size: 17px;
+  }
+}
+.small-circle-two{
+  @extend .small-circle-one;
+  background-color: $red;
+  i{
+    color: $white;
+    line-height: 30px;
+  }
+}
+.add{
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  position: absolute;
+  i{
+    text-align: center;
+    font-size: 40px;
+    color: $white ;
+  }
+}
+
+//DEFAULT CLASSES END
+
+/*GRID*/
+.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+[class*="col-"] {
+  padding: 10px;
+}
+
+@media all and (min-width: 600px) {
+  .col-2-3 {
+    float: left;
+    width: 66.66%;
+  }
+  .col-1-2 {
+    float: left;
+    width: 50%;
+  }
+  .col-1-3 {
+    float: left;
+    width: 33.33333333%
+  }
+
+  .col-1-4 {
+    float: left;
+    width: 25%;
+  }
+  .col-1-8 {
+    float: left;
+    width: 12.5%;
+  }
+}
+
+//HEADER STARTS
+.menu-block{
+  padding: 27px 0 20px 0;
+  .header-menu{
+    .nav-menu{
+      li{
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: 75px;
+        @include small-text($white, $smallFontSize, $fontThin, 0.6px)
+      }
+      li + li{
+        margin-left: 50px;
+      }
+      a:hover {
+        color: $red;
+        border-bottom: 3px solid $red;
+      }
+    }
+  }
+  #menu_btn {
+    button {
+      background: none;
+    }
+    span {
+      display: block;
+      width: 30px;
+      height: 5px;
+      background-color: $red;
+      border-radius: 10px;
+    }
+    span + span {
+      margin-top: 5px;
+    }
+    .menu-mobile {
+      display: none;
+    }
+    #nav {
+      display: none;
+    }
+    .menu-mobile {
+      width: 100vw;
+      position: absolute;
+      right: 0;
+    }
+    .mobile-item {
+      border: 1px solid $moreLightGrey;
+      box-shadow: 7px 8px 27px rgba(233, 235, 236, 0.5);
+      background-color: $white;
+      li {
+        padding: 15px;
+        font: 14px 'SourseSanPro_medium';
+        text-transform: uppercase;
+        color: $darkGrey;
+      }
+    }
+  }
+}
+//MAIN STARTS
+.main {
+  .inner{
+    padding: 153px 0 266px 0;
+    .inner-content {
+        span {
+          width: 107px;
+          height: 8px;
+          background: $spanTitle;
+          display: inline-block;
+          vertical-align: middle;
+          margin-top: -21px;
+        }
+      }
+      .sub-text{
+        @include small-text($white, $normalFontSize, $fontLight, 0.5px);
+      }
+    }
+  }
+
+//OUR_BENEFITS START
+.our-benefits {
+  padding: 62px 0 48px 0;
+  .title {
+    @include text(512px);
+    p {
+      font-size: 20px;
+    }
+  }
+  .our-services {
+    margin-top: 70px;
+  }
+  .hexagon:hover .on-hexagon-block {
+    opacity: 1;
+    }
+  .on-hexagon-block{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all .2s linear;
+  }
+  .sub-text {
+    @include text(200px);
+  }
+}
+
+//JOIN US STARTS
+.join-us {
+  .default-section{
+    padding: 97px 0 74px 0;
+  }
+  .block-wrapp{
+    padding: 100px;
+    border: 10px solid rgba(129, 129, 129, 0.3);
+    border-radius: 3px;
+    }
+  }
+.we-do{
+  padding: 60px 0 40px 0;
+  .title{
+    margin-bottom: 50px;
+  }
+  img{
+    max-width: none;
+  }
+}
+.advertising{
+  padding: 120px 0 130px 0;
+  label{
+    margin-right: 0;
+    margin-left: 12px;
+  }
+}
+.marketing {
+  padding: 109px 0 121px 0;
+}
+.portfolio{
+  padding: 76px  0 46px 0;
+  .menu-portfolio{
+    margin-top: 20px;
+  }
+  .nav-portfolio{
+    border: 1px solid $lightGrey;
+    border-right: 0;
+    border-left: 0;
+    li{
+      @include  big-text($red, $regularFontSize, $fontLight);
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 16px 0;
+      a{
+        padding: 16px 30px;
+      }
+    }
+  }
+  .images{
+    margin-top: 40px;
+  }
+  .img-portfolio{
+    position: relative;
+    img{
+      display: block;
+    }
+  }
+  .on-img-block{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    background-color: rgba(224, 110, 117, 0.7);
+    transition: all .3s linear;
+    opacity: 0;
+    .on-img-text{
+      padding: 15px;
+      .title-img{
+        @include small-text($white, $moreBigThanFontSize, $fontBold, 0.2px);
+        text-transform: uppercase;
+      }
+    }
+  }
+  .on-img-block-two{
+    @extend .on-img-block;
+  }
+  .img-portfolio:hover .on-img-block{
+    opacity: 1;
+  }
+  .btn-red{
+    margin-top: 55px;
+    button{
+      width: 190px;
+    }
+  }
+}
+.our-team{
+  padding: 50px 0 65px 0;
+  .wrapper{
+    margin-top: 48px;
+    .person{
+      margin-bottom: 15px;
+    }
+  }
+  .social-links{
+    margin-top: 9px;
+    li{
+      display: inline-block;
+    }
+    li + li{
+      margin-left: 16px;
+    }
+  }
+}
+.reviews {
+  padding: 50px 0;
+  .wrapper-review{
+    display: table;
+    table-layout: fixed;
+    margin-top: 55px;
+  }
+  [class*="col-"] {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .col-img{
+    min-width: 200px;
+  }
+  .col-text, .col-author{
+    width: 36%;
+  }
+  .col-author{
+    .title-new{
+      padding: 5%;
+    }
+  }
+  .review-text {
+    padding: 5%;
+    p {
+      color: $darkWhite;
+    }
+  }
+  .buttons{
+    margin-top: 34px;
+    span {
+      font-size: 30px;
+      color: $red;
+    }
+  }
+  .hexagon {
+    background: url("../img/hex-qoute.png") no-repeat center;
+    min-height: 86px;
+  }
+}
+.map-contact {
+  iframe {
+    width: 100%;
+    height: 331px;
+    border: 0;
+  }
+  .address{
+    background: url("../img/adrees.png") no-repeat center;
+    min-height: 242px;
+    margin: 0 auto -121px;
+    position: relative;
+    width: 209px;
+  }
+ }
+.last-block{
+  padding: 75px 0 40px 0;
+  a{
+    background: url("../img/footer-lg.png") no-repeat center;
+    min-height: 90px;
+    display: block;
+  }
+}
